@@ -4,8 +4,8 @@ Returns: a List of integers
 '''
 def moving_zeroes(arr):
     # Your code here
-
-    pass
+    arr.sort(key=lambda e: e==0)
+    return arr
 
 
 if __name__ == '__main__':
