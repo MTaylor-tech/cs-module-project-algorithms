@@ -2,6 +2,9 @@
 Input: an integer
 Returns: an integer
 '''
+import functools
+
+@functools.lru_cache
 def eating_cookies(n):
     # Your code here
     if n < 0:
@@ -24,3 +27,11 @@ if __name__ == "__main__":
 # 3:2^2 or 3^1 + 1^?
 # 4:c3+c2+c1
 # 5:c4+c3+c2
+
+def memoize(f):
+    memo = {}
+    def helper(x):
+        if x not in memo:
+            memo[x] = f(x)
+        return memo[x]
+    return helper
