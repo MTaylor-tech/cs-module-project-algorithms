@@ -2,10 +2,18 @@
 
 import sys
 
-def rock_paper_scissors(n):
-  # Your code here
+r = ['rock']
+p = ['paper']
+s = ['scissors']
+rps = [r,p,s]
 
-  pass
+def rock_paper_scissors(n):
+  if n <= 0:
+      return [[]]
+  elif n == 1:
+      return rps
+  else:
+      return [result + rps[x] for result in rock_paper_scissors(n-1) for x in range(3)]
 
 
 if __name__ == "__main__":
